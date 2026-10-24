@@ -1,0 +1,10 @@
+{
+  "name": "@agent-desktop/preload",
+  "version": "0.1.0",
+  "private": true,
+  "description": "预加载脚本：向渲染层暴露最小必要的宿主能力与传输口",
+  "main": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

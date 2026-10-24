@@ -1,0 +1,39 @@
+{
+  "name": "agent-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "多 Agent 桌面端集合：把 pi / codex cli / claude code 等命令行 Agent 封装成桌面应用",
+  "engines": {
+    "node": ">=22.19"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  },
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build && node scripts/build-runtime.mjs",
+    "build:runtime": "node scripts/build-runtime.mjs",
+    "docker:build": "node scripts/build-runtime.mjs && docker build -f docker/Dockerfile -t agent-desktop-runtime:dev .",
+    "integration": "esbuild scripts/integration-container.ts --bundle --platform=node --format=esm --outfile=out/integration/integration.mjs --alias:@agent-desktop/app-server-protocol=./packages/app-server-protocol/src/index.ts --alias:@agent-desktop/agent-host=./packages/agent-host/src/index.ts && node out/integration/integration.mjs",
+    "start": "electron-vite preview",
+    "typecheck": "pnpm -r --parallel typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "package": "pnpm build && electron-builder --dir"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-react": "^6.1.2",
+    "electron": "^45.0.0",
+    "esbuild": "^0.25.0",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^3.2.4"
+  }
+}

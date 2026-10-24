@@ -1,0 +1,10 @@
+{
+  "name": "@agent-desktop/main",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Electron 主进程：窗口、宿主能力、容器编排与传输",
+  "main": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

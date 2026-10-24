@@ -1,0 +1,13 @@
+{
+  "name": "@agent-desktop/runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "容器内运行时：承载多 agent 适配层，并以 app-server 协议对外提供服务",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

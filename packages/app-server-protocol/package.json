@@ -1,0 +1,13 @@
+{
+  "name": "@agent-desktop/app-server-protocol",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Agent-Desktop 应用服务器协议：渲染层与运行时之间的帧契约与线级编解码",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules
+out/main
+out/preload
+out/renderer
+.git
+.gitignore
+*.log
+.DS_Store
+apps
+docs
+docker
+scripts
+test
+**/test
+**/*.test.ts

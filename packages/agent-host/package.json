@@ -1,0 +1,16 @@
+{
+  "name": "@agent-desktop/agent-host",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "多 Agent 适配层：把 pi / codex cli / claude code 等 agent 的差异收敛到统一接口后面",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "^1.4.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}
