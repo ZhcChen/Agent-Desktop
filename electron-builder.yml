@@ -1,0 +1,32 @@
+appId: com.agentdesktop.app
+productName: Agent Desktop
+directories:
+  output: release
+  buildResources: resources
+files:
+  - out/**/*
+  - package.json
+  - '!**/*.map'
+extraMetadata:
+  main: out/main/index.js
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - dmg
+    - zip
+  darkModeSupport: true
+  # 容器运行时由宿主侧准备，不打进安装包。
+  extendInfo:
+    NSAppTransportSecurity:
+      NSAllowsArbitraryLoads: true
+win:
+  target:
+    - nsis
+  # .ico 由 electron-builder 从 build/icon.png 自动生成
+linux:
+  target:
+    - AppImage
+  category: Development
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true

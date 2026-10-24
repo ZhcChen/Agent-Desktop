@@ -32,6 +32,13 @@ pnpm dev               # 开发模式
 | `pnpm build` | 主进程 / preload / 渲染层 / 容器运行时 |
 | `pnpm docker:build` | 构建运行时镜像 |
 | `pnpm integration` | 端到端：容器内 pi 经本地网关跑通真实模型（不启 GUI） |
+| `pnpm logo` | 重新生成 logo 资产（SVG + 各尺寸 PNG + .icns） |
+
+## Logo
+
+`assets/logo.svg` 是矢量母版，其余位图与 `.icns` 由 `pnpm logo` 生成。
+
+设计语义：圆角方形底板 = 桌面窗口；终端提示符 `>` = 与 agent 交互；三条递减的输出条 = 多 agent 集合；末尾的蓝色块光标 = 正在输出。蓝色只用于提示符与光标，保证唯一视觉焦点，小尺寸下依然可辨。
 
 ## 目录
 
